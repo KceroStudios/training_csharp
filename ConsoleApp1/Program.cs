@@ -4,32 +4,34 @@
     {
         static void Main(String[] args)
         {
-            Console.WriteLine("How is the temperature");
-            string temperature = Console.ReadLine();
-            int numericTemperature;
+            Console.WriteLine("Hello New User");
+            Console.WriteLine("Create your user name");
+            string userName = Console.ReadLine();
+            Console.WriteLine("Create your password");
+            string passWord = Console.ReadLine();
 
-            int number;
-            if (int.TryParse(temperature, out number))
+            if (userName == "" || passWord == "")
             {
-                numericTemperature = number;
+                Console.WriteLine("your username or password is invalid");
             }
             else
             {
-                numericTemperature = 0;
-                Console.WriteLine("you did not enter a valid number; the default temperature is set to 0. ");
+                Console.WriteLine("Successful registration - please, log in");
+                Console.WriteLine("Insert Your User Name");
+                string userNameRegister = Console.ReadLine();
+                Console.WriteLine("Insert your password");
+                string passWordRegister = Console.ReadLine();
+
+                if (passWordRegister == passWord &&  userNameRegister == userName)
+                {
+                    Console.WriteLine("Welcome " + userName);
+                }
+                else
+                {
+                    Console.WriteLine("Your user name or password is incorrect");
+                }
+
             }
-    
-            if (numericTemperature <= 10)
-            {
-                Console.WriteLine("You Need a Coat, la temperatura es de " + numericTemperature);
-            }
-            else if (numericTemperature > 10 && numericTemperature < 20)
-            {
-                Console.WriteLine("It's a good weather, la temperatura es de " + numericTemperature);
-            }
-            else { Console.WriteLine("it's so Hot, la temperatura es de " + numericTemperature);
-            }
-       
 
         }
     }
